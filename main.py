@@ -49,7 +49,7 @@ async def get_stats():
 
 async def start(update: Update, _: ContextTypes.DEFAULT_TYPE):
     """ Handles the /start command by sending a "Hello world!" message in response. """
-    await update.message.reply_text("Hello! 🍡 Send me a message and I'll echo it back to you")
+    await update.message.reply_text("Hello12345! 🍡 Send me a message and I'll echo it back to you")
 
 
 async def echo(update: Update, _: ContextTypes.DEFAULT_TYPE) -> None:
