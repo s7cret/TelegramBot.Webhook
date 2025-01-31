@@ -2,5 +2,6 @@
 builder = "NIXPACKS"
 
 [deploy]
-startCommand = "daphne -b 0.0.0.0 -p $PORT main:app"
+startCommand = "daphne -b 0.0.0.0 -p $PORT -v 2 main:app"
+
 
