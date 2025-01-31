@@ -41,6 +41,11 @@ async def process_update(request: Request):
     await bot_builder.process_update(update)
     return Response(status_code=HTTPStatus.OK)
 
+# 🔹 Получение статистики всех пользователей
+@app.get("/api/stats")
+async def get_stats():
+    result = conn.execute("SELECT username, clicks FROM clicks ORDER BY clicks DESC").fetchall()
+    return [{"username": row[0], "clicks": row[1]} for row in result]
 
 async def start(update: Update, _: ContextTypes.DEFAULT_TYPE):
     """ Handles the /start command by sending a "Hello world!" message in response. """
